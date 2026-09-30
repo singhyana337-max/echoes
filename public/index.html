@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ECHOES — A World That Remembers You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="wordmark">ECHOES</span>
+      <span class="tagline">A world that remembers you</span>
+    </div>
+    <div class="clock">
+      <div id="nights" class="nights" aria-label="Night"></div>
+      <div id="actions" class="actions" title="Conversations left tonight"></div>
+    </div>
+    <div class="controls">
+      <span id="brain" class="brain"></span>
+      <label class="toggle" title="Show ground truth: lies, secrets and knowledge gates">
+        <input type="checkbox" id="director" checked /> <span>Director view</span>
+      </label>
+      <button id="advance" class="btn primary"></button>
+      <button id="newRun" class="btn ghost">New playthrough</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="cast panel">
+      <h2 class="panel-title">Moonlight's Midnight Café</h2>
+      <p id="morning" class="morning"></p>
+      <div id="castList" class="cast-list"></div>
+      <div class="hint">Pick someone to talk to. Every conversation costs time; the café closes after <b id="perDay">8</b> exchanges.</div>
+    </section>
+
+    <section class="chat panel">
+      <div id="chatHeader" class="chat-header"></div>
+      <div id="chatLog" class="chat-log" aria-live="polite"></div>
+      <div id="chips" class="chips"></div>
+      <form id="chatForm" class="chat-form" autocomplete="off">
+        <input id="chatInput" maxlength="400" placeholder="Say something… (truth or lies — they'll remember)" />
+        <button class="btn primary" id="sendBtn">Say</button>
+      </form>
+    </section>
+
+    <section class="inspector panel">
+      <nav id="tabs" class="tabs" role="tablist"></nav>
+      <div id="tabBody" class="tab-body"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card" id="modalCard"></div>
+  </div>
+  <div id="toast" class="toast" hidden></div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

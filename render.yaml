@@ -1,0 +1,14 @@
+# One-click deploy on Render: New → Blueprint → pick this repository.
+services:
+  - type: web
+    name: echoes
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/state
+    envVars:
+      - key: NVIDIA_API_KEY
+        sync: false # Render asks for the value during setup; leave blank to run on the offline brain
+      - key: NEMOTRON_MODEL
+        value: nvidia/llama-3.3-nemotron-super-49b-v1.5

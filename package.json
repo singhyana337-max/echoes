@@ -1,0 +1,14 @@
+{
+  "name": "echoes",
+  "version": "0.1.0",
+  "description": "ECHOES — A World That Remembers You. NPCs with persistent, social memory powered by Nemotron.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "smoke": "node scripts/smoke.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
